@@ -114,22 +114,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Records<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="r_drug.html">Drug</a>
+                                    <a href="r_drug.php">Drug</a>
                                 </li>
                                 <li>
-                                    <a href="r_drug_manufacturer.html">Drug Manufacturer</a>
+                                    <a href="r_drug_manufacturer.php">Drug Manufacturer</a>
                                 </li>
                                 <li>
-                                    <a href="r_employee.html">Employee</a>
+                                    <a href="r_employee.php">Employee</a>
                                 </li>
                                 <li>
-                                    <a href="r_pharmacy.html">Pharmacy</a>
+                                    <a href="r_pharmacy.php">Pharmacy</a>
                                 </li>
                                 <li>
-                                    <a href="r_patient.html">Patient</a>
+                                    <a href="r_patient.php">Patient</a>
                                 </li>
                                 <li>
-                                    <a href="r_doctor.html">Doctor</a>
+                                    <a href="r_doctor.php">Doctor</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

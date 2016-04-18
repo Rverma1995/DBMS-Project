@@ -259,6 +259,8 @@
                                                                     $cdTitle
                                                                 </option>";
                                                             }
+
+                                                            mysql_close($link);
                                                         ?>
                                                     </select>
                                                 </div>
@@ -300,6 +302,8 @@
                                                                     </option>";
                                                                 }
                                                             }
+
+                                                            mysql_close($link);
 
                                                         ?>
                                                     </select>

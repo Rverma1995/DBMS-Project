@@ -256,6 +256,8 @@
                                                                     $cdTitle
                                                                 </option>";
                                                             }
+
+                                                            mysql_close($link);
                                                         ?>
                                                     </select>
                                                 </div>
