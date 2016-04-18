@@ -1,0 +1,11 @@
+References
+
+"Datatables - Development - Server-Side Processing". 2016. Datatables.Net. https://datatables.net/development/server-side/php_mysqli.
+
+"Generatedata.Com". 2016. Generatedata.Com. http://www.generatedata.com/.
+
+"Hospital Departments". 2016. Www.Sfh.Med.Sa. https://www.sfh.med.sa/English/GeneralInfo/Pages/HospitalDepartments.aspx.
+
+"The Top 10 Biggest Pharmaceutical Companies Of 2014". 2016. Pharmaceutical Technology. http://www.pharmaceutical-technology.com/features/featurethe-top-10-biggest-pharmaceutical-companies-of-2014-4396561/.
+
+"Top 100 Most Prescribed, Top Selling Drugs". 2016. Medscape. http://www.medscape.com/viewarticle/825053.
