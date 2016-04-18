@@ -169,7 +169,7 @@
                                                 // Check connection
                                                 if($link === false){
                                                     $cerror = mysqli_connect_error();
-                                                    echo "<div class=\"alert alert-danger alert-dismissable\">
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                             Could not connect to database! $cerror
                                                           </div>";
                                                 }
@@ -183,12 +183,12 @@
                                                 // attempt insert query execution
                                                 $sql = "INSERT INTO patient (first_name, last_name, phone_no, gender) VALUES ('$first_name', '$last_name', '$phone_no', '$gender')";
                                                 if(mysqli_query($link, $sql)){
-                                                echo "<div class=\"alert alert-success alert-dismissable\">
+                                                echo "<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                         Records Added!
                                                       </div>";
                                                 } else {
                                                     $error = "$sql. " . mysqli_error($link);
-                                                    echo "<div class=\"alert alert-danger alert-dismissable\">
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                             Could not execute $error.
                                                           </div>";
                                                 }
@@ -230,7 +230,7 @@
                                                     <p class="help-block" style="cursor: default;"><a data-toggle="tooltip" data-placement="top" title="" data-original-title="table name" style="color:#737373;">patient</a> → <a data-toggle="tooltip" data-placement="top" title="" data-original-title="column name" style="color:#737373;">gender</a></p>
                                                 </div>
                                             </div>
-                                            <button type="submit" name="submit" value="Submit" class="btn btn-default pull-right">Submit Button</button>
+                                            <button type="submit" name="submit" value="Submit" class="btn btn-default pull-right">Insert Record</button>
                                         </form>
                                     </div>
                                 </div>

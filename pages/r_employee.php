@@ -120,22 +120,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Records<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="r_drug.html">Drug</a>
+                                    <a href="r_drug.php">Drug</a>
                                 </li>
                                 <li>
-                                    <a href="r_drug_manufacturer.html">Drug Manufacturer</a>
+                                    <a href="r_drug_manufacturer.php">Drug Manufacturer</a>
                                 </li>
                                 <li>
-                                    <a href="r_employee.html">Employee</a>
+                                    <a href="r_employee.php">Employee</a>
                                 </li>
                                 <li>
-                                    <a href="r_pharmacy.html">Pharmacy</a>
+                                    <a href="r_pharmacy.php">Pharmacy</a>
                                 </li>
                                 <li>
-                                    <a href="r_patient.html">Patient</a>
+                                    <a href="r_patient.php">Patient</a>
                                 </li>
                                 <li>
-                                    <a href="r_doctor.html">Doctor</a>
+                                    <a href="r_doctor.php">Doctor</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -161,7 +161,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <strong>Drug Manufacturer(s)</strong>
+                                <strong>Employee(s)</strong>
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
@@ -169,23 +169,115 @@
                                     <table class="table table-striped table-bordered table-hover" id="example">
                                         <thead>
                                             <tr>
-                                                <th>Drug Manufacturer ID</th>
-                                                <th>Name</th>
-                                                <th>Phone No.</th>
+                                                <th>Employe ID</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
                                                 <th>timestamp</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>drug_manufacturer_id</th>
-                                                <th>name</th>
-                                                <th>phone_no</th>
+                                                <th>employee_id</th>
+                                                <th>first_name</th>
+                                                <th>last_name</th>
                                                 <th>timestamp</th>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Update Record</strong>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <?php
+                                            //Form submitted
+                                            if(isset($_POST['submit'])) {
+                                                $link = mysqli_connect("localhost", "admin2", "admin2", "dbms_pharmacy");
+
+                                                //Check connection
+                                                if($link === false){
+                                                    $cerror = mysqli_connect_error();
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                                                            Could not connect to database! $cerror
+                                                          </div>";
+                                                }
+
+                                                // Escape user inputs for security
+                                                $employee_id = mysqli_real_escape_string($link, $_POST['employee_id']);
+                                                $first_name = mysqli_real_escape_string($link, $_POST['first_name']);
+                                                $last_name = mysqli_real_escape_string($link, $_POST['last_name']);
+
+                                                //attempt insert query execution
+                                                $sql = "UPDATE employee SET first_name = '$first_name', last_name = '$last_name' WHERE employee_id = $employee_id";
+                                                if(mysqli_query($link, $sql)){
+                                                    echo "<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                                                            Record Updated!
+                                                          </div>";
+                                                } else {
+                                                    $error = "$sql. " . mysqli_error($link);
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                                                            Could not execute $error.
+                                                          </div>";
+                                                }
+
+                                                // close connection
+                                                mysqli_close($link);
+                                            }
+                                        ?>
+
+                                        <form role="form" method="post" action="<?=$_SERVER['PHP_SELF']?>">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Select Employee ID</label>
+                                                    <select class="form-control" name="employee_id" required="">
+                                                        <?php
+                                                            $mysqlserver="localhost";
+                                                            $mysqlusername="admin2";
+                                                            $mysqlpassword="admin2";
+                                                            $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+
+                                                            $dbname = 'dbms_pharmacy';
+                                                            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
+
+                                                            $cdquery="SELECT employee_id FROM employee";
+                                                            $cdresult=mysql_query($cdquery) or die ("Query to get data from firsttable failed: ".mysql_error());
+
+                                                            while ($cdrow=mysql_fetch_array($cdresult)) {
+                                                            $cdTitle=$cdrow["employee_id"];
+                                                                echo "<option>
+                                                                    $cdTitle
+                                                                </option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Enter First Name</label>
+                                                    <input class="form-control" type="text" name="first_name" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Enter Last Name</label>
+                                                    <input class="form-control" type="text" name="last_name" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" name="submit" value="Submit" class="btn btn-default pull-right" style="margin-top:25px;">Update Record</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.panel-body -->
                         </div>
@@ -223,7 +315,7 @@
                 responsive: true,
                 "processing": true,
                 "serverSide": true,
-                "sAjaxSource": "../scripts/r_drug_manufacturer.php"
+                "sAjaxSource": "../scripts/r_employee.php"
             } );
         } );
     </script>

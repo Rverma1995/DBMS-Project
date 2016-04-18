@@ -114,22 +114,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Records<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="r_drug.html">Drug</a>
+                                    <a href="r_drug.php">Drug</a>
                                 </li>
                                 <li>
-                                    <a href="r_drug_manufacturer.html">Drug Manufacturer</a>
+                                    <a href="r_drug_manufacturer.php">Drug Manufacturer</a>
                                 </li>
                                 <li>
-                                    <a href="r_employee.html">Employee</a>
+                                    <a href="r_employee.php">Employee</a>
                                 </li>
                                 <li>
-                                    <a href="r_pharmacy.html">Pharmacy</a>
+                                    <a href="r_pharmacy.php">Pharmacy</a>
                                 </li>
                                 <li>
-                                    <a href="r_patient.html">Patient</a>
+                                    <a href="r_patient.php">Patient</a>
                                 </li>
                                 <li>
-                                    <a href="r_doctor.html">Doctor</a>
+                                    <a href="r_doctor.php">Doctor</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -169,7 +169,7 @@
                                                 // Check connection
                                                 if($link === false){
                                                     $cerror = mysqli_connect_error();
-                                                    echo "<div class=\"alert alert-danger alert-dismissable\">
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                             Could not connect to database! $cerror
                                                           </div>";
                                                 }
@@ -193,18 +193,18 @@
 
                                                     $sql = "INSERT INTO _contract (drug_manufacturer_id, pharmacy_id, start_date, end_date) VALUES ('$drug_manufacturer_id', '$pharmacy_id', '$contract_start_date', '$contract_end_date')";
                                                     if(mysqli_query($link, $sql)){
-                                                        echo "<div class=\"alert alert-success alert-dismissable\">
+                                                        echo "<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                                 Records Added!
                                                               </div>";
                                                     } else {
                                                         $error = "$sql. " . mysqli_error($link);
-                                                        echo "<div class=\"alert alert-danger alert-dismissable\">
+                                                        echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                                 Could not execute $error.
                                                               </div>";
                                                     }
                                                 } else {
                                                     $error = "$sql. " . mysqli_error($link);
-                                                    echo "<div class=\"alert alert-danger alert-dismissable\">
+                                                    echo "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                             Could not execute $error.
                                                           </div>";
                                                 }
@@ -273,7 +273,7 @@
                                                     <p class="help-block" style="cursor: default;"><a data-toggle="tooltip" data-placement="top" title="" data-original-title="table name" style="color:#737373;">_contract</a> → <a data-toggle="tooltip" data-placement="top" title="" data-original-title="column name" style="color:#737373;">end_date</a></p>
                                                 </div>
                                             </div>
-                                            <button type="submit" name="submit" value="Submit" class="btn btn-default pull-right">Submit Button</button>
+                                            <button type="submit" name="submit" value="Submit" class="btn btn-default pull-right">Insert Record</button>
                                         </form>
                                     </div>
                                 </div>
