@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Pharmacy Database Management System</a>
+                <a class="navbar-brand" href="index.php">Pharmacy Database Management System</a>
             </div>
             <!-- /.navbar-header -->
 

@@ -52,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Pharmacy Database Management System</a>
+                <a class="navbar-brand" href="index.php">Pharmacy Database Management System</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -351,6 +351,7 @@
     <script src="../components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="../components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
     <script src="../dist/js/dataTables.select.js"></script>
+    <script src="../dist/js/dataTables.responsive.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
@@ -358,6 +359,7 @@
     <script>
         $(document).ready(function() {
             $('#example').DataTable( {
+                responsive: true,
                 "columnDefs": [ {
                     "orderable": false,
                     "searchable": false,
@@ -373,7 +375,6 @@
                     "selector": 'td:first-child'
                 },
                 "order": [[ 1, 'asc' ]],
-                "responsive": true,
                 "processing": true,
                 "serverSide": true,
                 "sAjaxSource": "../scripts/db_doctor.php"
