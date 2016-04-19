@@ -84,7 +84,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-plus-circle fa-fw"></i> Insert<span class="fa arrow"></span></a>
@@ -192,7 +192,7 @@
 
                                                     $sql = "INSERT INTO _makes (drug_id, drug_manufacturer_id) VALUES ('$drug_id', '$drug_manufacturer_id')";
                                                     if(mysqli_query($link, $sql)){
-                                                        echo "<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                                                        echo "<div class=\"alert alert-success alert-dismissable\" id=\"fade\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                                 Records Added!
                                                               </div>";
                                                     } else {
@@ -304,6 +304,14 @@
         selector: "[data-toggle=tooltip]",
         container: "body"
     })
+    </script>
+
+    <script type="text/javascript">
+    window.setTimeout(function() {
+        $("#fade").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 2000);
     </script>
 
 </body>

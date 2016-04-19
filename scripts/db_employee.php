@@ -12,13 +12,13 @@
     /* Array of database columns which should be read and sent back to DataTables. Use a space where
      * you want to insert a non-database field (for example a counter or static image)
      */
-    $aColumns = array( 'drug_id', 'trade_name', 'stock', 'price', 'timestamp');
+    $aColumns = array(' ', 'employee_id', 'first_name' , 'last_name', 'timestamp');
 
     /* Indexed column (used for fast and accurate table cardinality) */
-    $sIndexColumn = "drug_id";
+    $sIndexColumn = "employee_id";
 
     /* DB table to use */
-    $sTable = "drug";
+    $sTable = "employee";
 
     /* Database connection information */
     $gaSql['user']       = "admin2";
@@ -180,6 +180,11 @@
             {
                 /* Special output formatting for 'version' column */
                 $row[] = ($aRow[ $aColumns[$i] ]=="0") ? '-' : $aRow[ $aColumns[$i] ];
+            }
+            else if ( $aColumns[$i] == ' ' )
+            {
+                /* General output */
+                $row[] = " ";
             }
             else if ( $aColumns[$i] != ' ' )
             {

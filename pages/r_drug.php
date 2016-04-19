@@ -19,6 +19,7 @@
 
     <!-- DataTables CSS -->
     <link href="../components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/select.dataTables.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
     <link href="../components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
@@ -90,7 +91,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-plus-circle fa-fw"></i> Insert<span class="fa arrow"></span></a>
@@ -159,6 +160,12 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="alert alert-warning alert-dismissable hidden" id="del_alert_succ"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            Record Deleted!
+                        </div>
+                        <div class="alert alert-danger alert-dismissable hidden" id="del_alert_fail"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            Unable to delete Record!
+                        </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <strong>Drug(s)</strong>
@@ -169,6 +176,7 @@
                                     <table class="table table-striped table-bordered table-hover" id="example">
                                         <thead>
                                             <tr>
+                                                <th><button type="button" class="btn btn-outline btn-danger btn-xs" id="deleteButton">Delete</button></th>
                                                 <th>Drug ID</th>
                                                 <th>Trade Name</th>
                                                 <th>Stock</th>
@@ -178,6 +186,7 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <th></th>
                                                 <th>drug_id</th>
                                                 <th>trade_name</th>
                                                 <th>stock</th>
@@ -221,7 +230,7 @@
                                                 //attempt insert query execution
                                                 $sql = "UPDATE drug SET trade_name = '$trade_name', stock = '$stock', price = '$price' WHERE drug_id = $drug_id";
                                                 if(mysqli_query($link, $sql)){
-                                                    echo "<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                                                    echo "<div class=\"alert alert-success alert-dismissable\" id=\"fade\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                                                             Record Updated!
                                                           </div>";
                                                 } else {
@@ -245,7 +254,7 @@
                                                             $mysqlserver="localhost";
                                                             $mysqlusername="admin2";
                                                             $mysqlpassword="admin2";
-                                                            $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                            $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
                                                             $dbname = 'dbms_pharmacy';
                                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
@@ -316,6 +325,7 @@
     <!-- DataTables JavaScript -->
     <script src="../components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="../components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="../dist/js/dataTables.select.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
@@ -323,12 +333,83 @@
     <script>
         $(document).ready(function() {
             $('#example').DataTable( {
-                responsive: true,
+                "columnDefs": [ {
+                    "orderable": false,
+                    "searchable": false,
+                    "className": 'select-checkbox',
+                    "width": "1px",
+                    "targets":   0
+                }, {
+                    "width": "10%",
+                    "targets": 1
+                } ],
+                "select": {
+                    "style":    'single',
+                    "selector": 'td:first-child'
+                },
+                "order": [[ 1, 'asc' ]],
+                "responsive": true,
                 "processing": true,
                 "serverSide": true,
-                "sAjaxSource": "../scripts/r_drug.php"
+                "sAjaxSource": "../scripts/db_drug.php"
             } );
         } );
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        // $('#del_alert_succ').hide();
+        // $('#del_alert_fail').hide();
+        var table = $('#example').DataTable();
+
+        $('#deleteButton').click( function () {
+            var data = table.rows( { selected: true } ).data();
+            var drug_id = (data[0][1]);
+
+            console.log(drug_id);
+            $.ajax({
+                data: 'data=' + drug_id,
+                url: '../scripts/del_drug.php',
+                method: 'POST',
+                success: function(msg) {
+                    if(msg == "succ") {
+                        table.ajax.reload();
+                        $('#del_alert_succ').removeClass('hidden');
+                        window.setTimeout(function() {
+                            $("#del_alert_succ").fadeTo(500, 0).slideUp(500, function(){
+                                $('#del_alert_succ').addClass('hidden');
+                            });
+                        }, 2000);
+                        window.setTimeout(function() {
+                            $("#del_alert_succ").fadeTo(500, 100).slideDown(500, function(){
+                                $('#del_alert_succ').addClass('hidden');
+                            });
+                        }, 2000);
+                    } else {
+                        $('#del_alert_fail').removeClass('hidden');
+                        window.setTimeout(function() {
+                            $("#del_alert_fail").fadeTo(500, 0).slideUp(500, function(){
+                                $('#del_alert_fail').addClass('hidden');
+                            });
+                        }, 2000);
+                        window.setTimeout(function() {
+                            $("#del_alert_fail").fadeTo(500, 100).slideDown(500, function(){
+                                $('#del_alert_fail').addClass('hidden');
+                            });
+                        }, 2000);
+                    }
+                }
+            });
+        } );
+    } );
+    </script>
+
+    <script type="text/javascript">
+    window.setTimeout(function() {
+        $("#fade").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 2000);
     </script>
 
 </body>
