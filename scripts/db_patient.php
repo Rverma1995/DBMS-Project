@@ -24,7 +24,7 @@
     $gaSql['user']       = "sql6116110";
     $gaSql['password']   = "z4yM9J2x3Y";
     $gaSql['db']         = "sql6116110";
-    $gaSql['server']     = "sql6.freemysqlhosting.net:3306";
+    $gaSql['server']     = "sql6.freemysqlhosting.net";
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

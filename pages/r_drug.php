@@ -210,7 +210,7 @@
                                         <?php
                                             //Form submitted
                                             if(isset($_POST['submit'])) {
-                                                $link = mysqli_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
+                                                $link = mysqli_connect("sql6.freemysqlhosting.net", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
                                                 //Check connection
                                                 if($link === false){
@@ -250,7 +250,7 @@
                                                     <label>Select Drug ID</label>
                                                     <select class="form-control" name="drug_id" required="">
                                                         <?php
-                                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                            $mysqlserver="sql6.freemysqlhosting.net";
                                                             $mysqlusername="sql6116110";
                                                             $mysqlpassword="z4yM9J2x3Y";
                                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
