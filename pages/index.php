@@ -17,9 +17,6 @@
     <!-- MetisMenu CSS -->
     <link href="../components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="../components/morrisjs/morris.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -52,30 +49,10 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
+                        <!-- <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -84,8 +61,7 @@
                                     </button>
                                 </span>
                             </div>
-                            <!-- /input-group -->
-                        </li>
+                        </li> -->
                         <li>
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -115,7 +91,7 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Records<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <ul class="nav nav-second-level in">
                                 <li>
                                     <a href="r_drug.php">Drug</a>
                                 </li>
@@ -511,12 +487,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-1 text-center">
-                                                                    <h5 id="rate1" style="margin-top:30px; "></h5>
+                                                                    <h5 id="rate1" style="margin-top:30px; ">-</h5>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">
                                                                         <label>Enter Quantity</label>
-                                                                        <input  id="inp_quan1" class="form-control" type="number" name="quantity1" required="" value="0" oninput="calculateTotal();">
+                                                                        <input  id="inp_quan1" class="form-control" type="number" name="quantity1" required="" value="0" min="0" oninput="calculateTotal();">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -552,12 +528,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-1 text-center">
-                                                                    <h5 id="rate2" style="margin-top:30px; "></h5>
+                                                                    <h5 id="rate2" style="margin-top:30px; ">-</h5>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">
                                                                         <label>Enter Quantity</label>
-                                                                        <input  id="inp_quan2" class="form-control" type="number" name="quantity2" required="" value="0" oninput="calculateTotal();">
+                                                                        <input  id="inp_quan2" class="form-control" type="number" name="quantity2" required="" value="0" min="0" oninput="calculateTotal();">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -593,12 +569,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-1 text-center">
-                                                                    <h5 id="rate3" style="margin-top:30px; "></h5>
+                                                                    <h5 id="rate3" style="margin-top:30px; ">-</h5>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">
                                                                         <label>Enter Quantity</label>
-                                                                        <input  id="inp_quan3" class="form-control" type="number" name="quantity3" required="" value="0" oninput="calculateTotal();">
+                                                                        <input  id="inp_quan3" class="form-control" type="number" name="quantity3" required="" value="0" min="0" oninput="calculateTotal();">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -633,12 +609,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-1 text-center">
-                                                                    <h5 id="rate4" style="margin-top:30px; "></h5>
+                                                                    <h5 id="rate4" style="margin-top:30px; ">-</h5>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">
                                                                         <label>Enter Quantity</label>
-                                                                        <input id="inp_quan4" class="form-control" type="number" name="quantity4" required="" value="0" oninput="calculateTotal();">
+                                                                        <input id="inp_quan4" class="form-control" type="number" name="quantity4" required="" value="0" min="0" oninput="calculateTotal();">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -674,12 +650,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-1 text-center">
-                                                                    <h5 id="rate5" style="margin-top:30px; "></h5>
+                                                                    <h5 id="rate5" style="margin-top:30px; ">-</h5>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">
                                                                         <label>Enter Quantity</label>
-                                                                        <input id="inp_quan5" class="form-control" type="number" name="quantity5" required="" value="0" oninput="calculateTotal();" disabled>
+                                                                        <input id="inp_quan5" class="form-control" type="number" name="quantity5" required="" value="0" min="0" oninput="calculateTotal();" disabled>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -709,6 +685,96 @@
                             <!-- /.panel-body -->
                         </div>
                     </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-building-o fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <?php
+                                            $mysqlserver="localhost";
+                                            $mysqlusername="admin2";
+                                            $mysqlpassword="admin2";
+                                            $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+
+                                            $dbname = 'dbms_pharmacy';
+                                            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
+
+                                            $cdquery="SELECT count(drug_manufacturer_id) AS count_drug_manufacturer_id FROM drug_manufacturer";
+                                            $cdresult=mysql_query($cdquery) or die ("Query to get data from firsttable failed: ".mysql_error());
+
+                                            while ($cdrow=mysql_fetch_array($cdresult)) {
+                                            $cdTitle=$cdrow["count_drug_manufacturer_id"];
+                                                echo "<div class=\"huge\">$cdTitle</div>";
+                                            }
+
+                                            mysql_close($link);
+                                        ?>
+                                        <div>Drug Manufacturers</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="r_drug_manufacturer.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View/Update Records</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user-md fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <?php
+                                            $mysqlserver="localhost";
+                                            $mysqlusername="admin2";
+                                            $mysqlpassword="admin2";
+                                            $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+
+                                            $dbname = 'dbms_pharmacy';
+                                            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
+
+                                            $cdquery="SELECT count(doctor_id) AS count_doctor_id FROM doctor";
+                                            $cdresult=mysql_query($cdquery) or die ("Query to get data from firsttable failed: ".mysql_error());
+
+                                            while ($cdrow=mysql_fetch_array($cdresult)) {
+                                            $cdTitle=$cdrow["count_doctor_id"];
+                                                echo "<div class=\"huge\">$cdTitle</div>";
+                                            }
+
+                                            mysql_close($link);
+                                        ?>
+                                        <div>Doctors</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="r_employee.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View/Update Records</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <strong>Sale(s) Past Week</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div id ='chartDiv'></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
@@ -727,9 +793,8 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../components/raphael/raphael-min.js"></script>
-    <script src="../components/morrisjs/morris.min.js"></script>
+    <!-- Zing Charts JavaScript -->
+    <script src="../components/zingchart/zingchart.min.js"></script>
     <!-- <script src="../js/morris-data.js"></script> -->
 
     <!-- Custom Theme JavaScript -->
@@ -1042,6 +1107,57 @@
             $(this).remove();
         });
     }, 2000);
+    </script>
+
+    <script>
+
+    var myData=[<?php
+    $mysqli = new mysqli("localhost", "admin2", "admin2", "dbms_pharmacy");
+
+    /* Check the connection. */
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+    $data=mysqli_query($mysqli,"SELECT  DATE(timestamp) AS f_name, COUNT(transaction_id) AS f_data FROM _transaction GROUP BY DATE(timestamp) ORDER BY f_name DESC LIMIT 7");
+    while($info=mysqli_fetch_array($data))
+        echo $info['f_data'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
+    ?>];
+    var myLabels=[<?php
+    $mysqli = new mysqli("localhost", "admin2", "admin2", "dbms_pharmacy");
+
+    /* Check the connection. */
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+    $data=mysqli_query($mysqli,"SELECT  DATE(timestamp) AS f_name, COUNT(transaction_id) AS f_data FROM _transaction GROUP BY DATE(timestamp) ORDER BY f_name DESC LIMIT 7");
+    while($info=mysqli_fetch_array($data))
+        echo '"'.$info['f_name'].'",'; /* The concatenation operator '.' is used here to create string values from our database names. */
+    ?>];
+
+    zingchart.render({
+        id:"chartDiv",
+        width:"100%",
+        height:539,
+        data:{
+            "type": "line",
+            "plot":{
+            "animation":{
+                "effect":"ANIMATION_FADE_IN"
+            },
+            "aspect":"spline"
+            },
+            "scale-x":{
+                "labels":myLabels
+            },
+            "series":[
+                {
+                    "values":myData
+                }
+            ]
+        }
+    });
     </script>
 
 </body>
