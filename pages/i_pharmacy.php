@@ -163,7 +163,7 @@
                                         <?php
                                             //Form submitted
                                             if(isset($_POST['submit'])) {
-                                                $link = mysqli_connect("localhost", "admin2", "admin2", "dbms_pharmacy");
+                                                $link = mysqli_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
                                                 // Check connection
                                                 if($link === false){

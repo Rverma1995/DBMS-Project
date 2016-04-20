@@ -140,12 +140,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(pharmacy_id) AS count_pharmacy_id FROM pharmacy";
@@ -180,12 +180,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(employee_id) AS count_employee_id FROM employee";
@@ -220,12 +220,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(drug_id) AS count_drug_id FROM drug";
@@ -260,12 +260,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(patient_id) AS count_patient_id FROM patient";
@@ -312,7 +312,7 @@
                                                         <?php
                                                             //Form submitted
                                                             if(isset($_POST['submit'])) {
-                                                                $link = mysqli_connect("localhost", "admin2", "admin2", "dbms_pharmacy");
+                                                                $link = mysqli_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
                                                                 //Check connection
                                                                 if($link === false){
@@ -359,8 +359,8 @@
                                                                 }
 
                                                                 if(mysqli_query($link, $sql)){
-                                                                    $db = mysql_connect("localhost", "admin2", "admin2");
-                                                                    mysql_select_db("dbms_pharmacy", $db);
+                                                                    $db = mysql_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y");
+                                                                    mysql_select_db("sql6116110", $db);
                                                                     $result = mysql_query("SELECT prescription_id FROM _prescription ORDER BY prescription_id DESC LIMIT 1");
                                                                     $data = mysql_fetch_row($result);
 
@@ -397,12 +397,12 @@
                                                                             <option disabled selected value style="display:none;"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT patient_id, first_name, last_name FROM patient";
@@ -429,12 +429,12 @@
                                                                             <option disabled selected value style="display:none;"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT doctor_id, first_name, last_name FROM doctor";
@@ -463,12 +463,12 @@
                                                                             <option disabled selected value="-1" style="display:none;"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT drug_id, trade_name FROM drug";
@@ -504,12 +504,12 @@
                                                                             <option selected value="-1"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT drug_id, trade_name FROM drug";
@@ -545,12 +545,12 @@
                                                                             <option selected value="-1"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT drug_id, trade_name FROM drug";
@@ -586,12 +586,12 @@
                                                                             <option selected value="-1"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT drug_id, trade_name FROM drug";
@@ -626,12 +626,12 @@
                                                                             <option selected value="-1"></option>
                                                                             <?php
 
-                                                                                $mysqlserver="localhost";
-                                                                                $mysqlusername="admin2";
-                                                                                $mysqlpassword="admin2";
-                                                                                $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                                                $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                                                $mysqlusername="sql6116110";
+                                                                                $mysqlpassword="z4yM9J2x3Y";
+                                                                                $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                                                $dbname = 'dbms_pharmacy';
+                                                                                $dbname = 'sql6116110';
                                                                                 mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                                                 $cdquery="SELECT drug_id, trade_name FROM drug";
@@ -694,12 +694,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(drug_manufacturer_id) AS count_drug_manufacturer_id FROM drug_manufacturer";
@@ -734,12 +734,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $mysqlserver="localhost";
-                                            $mysqlusername="admin2";
-                                            $mysqlpassword="admin2";
+                                            $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                            $mysqlusername="sql6116110";
+                                            $mysqlpassword="z4yM9J2x3Y";
                                             $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                            $dbname = 'dbms_pharmacy';
+                                            $dbname = 'sql6116110';
                                             mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                             $cdquery="SELECT count(doctor_id) AS count_doctor_id FROM doctor";
@@ -1112,7 +1112,7 @@
     <script>
 
     var myData=[<?php
-    $mysqli = new mysqli("localhost", "admin2", "admin2", "dbms_pharmacy");
+    $mysqli = new mysqli("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
     /* Check the connection. */
     if (mysqli_connect_errno()) {
@@ -1124,7 +1124,7 @@
         echo $info['f_data'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
     ?>];
     var myLabels=[<?php
-    $mysqli = new mysqli("localhost", "admin2", "admin2", "dbms_pharmacy");
+    $mysqli = new mysqli("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
     /* Check the connection. */
     if (mysqli_connect_errno()) {

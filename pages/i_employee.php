@@ -163,7 +163,7 @@
                                         <?php
                                             //Form submitted
                                             if(isset($_POST['submit'])) {
-                                                $link = mysqli_connect("localhost", "admin2", "admin2", "dbms_pharmacy");
+                                                $link = mysqli_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y", "sql6116110");
 
                                                 //Check connection
                                                 if($link === false){
@@ -184,8 +184,8 @@
                                                 //attempt insert query execution
                                                 $sql = "INSERT INTO employee (first_name, last_name) VALUES ('$first_name', '$last_name')";
                                                 if(mysqli_query($link, $sql)){
-                                                    $db = mysql_connect("localhost", "admin2", "admin2");
-                                                    mysql_select_db("dbms_pharmacy", $db);
+                                                    $db = mysql_connect("sql6.freemysqlhosting.net:3306", "sql6116110", "z4yM9J2x3Y");
+                                                    mysql_select_db("sql6116110", $db);
                                                     $result = mysql_query("SELECT employee_id FROM employee WHERE first_name = '$first_name' AND last_name = '$last_name'");
                                                     $data = mysql_fetch_row($result);
 
@@ -234,12 +234,12 @@
                                                 <select class="form-control" name="pharmacy" required="">
                                                     <?php
 
-                                                        $mysqlserver="localhost";
-                                                        $mysqlusername="admin2";
-                                                        $mysqlpassword="admin2";
-                                                        $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+                                                        $mysqlserver="sql6.freemysqlhosting.net:3306";
+                                                        $mysqlusername="sql6116110";
+                                                        $mysqlpassword="z4yM9J2x3Y";
+                                                        $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
 
-                                                        $dbname = 'dbms_pharmacy';
+                                                        $dbname = 'sql6116110';
                                                         mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
 
                                                         $cdquery="SELECT name, pharmacy_id FROM pharmacy";

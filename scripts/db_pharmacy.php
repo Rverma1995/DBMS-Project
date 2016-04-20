@@ -21,10 +21,10 @@
     $sTable = "pharmacy";
 
     /* Database connection information */
-    $gaSql['user']       = "admin2";
-    $gaSql['password']   = "admin2";
-    $gaSql['db']         = "dbms_pharmacy";
-    $gaSql['server']     = "localhost";
+    $gaSql['user']       = "sql6116110";
+    $gaSql['password']   = "z4yM9J2x3Y";
+    $gaSql['db']         = "sql6116110";
+    $gaSql['server']     = "sql6.freemysqlhosting.net:3306";
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

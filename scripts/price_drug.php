@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "admin2";
-$password = "admin2";
-$dbname = "dbms_pharmacy";
+$servername = "sql6.freemysqlhosting.net:3306";
+$username = "sql6116110";
+$password = "z4yM9J2x3Y";
+$dbname = "sql6116110";
 
 $drug_id = $_POST['data'];
 
